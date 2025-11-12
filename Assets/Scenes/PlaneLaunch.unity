@@ -1185,6 +1185,7 @@ GameObject:
   - component: {fileID: 996174922}
   - component: {fileID: 996174921}
   - component: {fileID: 996174923}
+  - component: {fileID: 996174924}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1306,6 +1307,82 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &996174924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996174919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d156682682256243b1a714c0e57d02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flugun:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Flugun
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 7a295114-3d84-455d-9c11-e2408da98080
+      m_Processors: 
+      m_Interactions: Hold(duration=2)
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 077a814c-a21f-4744-acbc-78d7df6ae936
+        m_Path: <Touchscreen>/primaryTouch/press
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Flugun
+        m_Flags: 0
+      - m_Name: 
+        m_Id: a03da508-43c7-4558-ba3c-55af0f0acf3f
+        m_Path: <Mouse>/leftButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Flugun
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  UnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1786899209}
+        m_TargetAssemblyTypeName: Flight, Assembly-CSharp
+        m_MethodName: FlyGunind
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  UnityEventIsPush:
+    m_PersistentCalls:
+      m_Calls: []
+  maxTime: 2
+  point: 0
+  UnityEventAngle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1786899209}
+        m_TargetAssemblyTypeName: Flight, Assembly-CSharp
+        m_MethodName: ChangeAngle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  currentAngle: 0
 --- !u!1 &1165751477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1599,7 @@ RectTransform:
   m_Children:
   - {fileID: 2019714141}
   - {fileID: 996174920}
+  - {fileID: 1573945733}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1543,7 +1621,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1573945733}
-  - component: {fileID: 1573945732}
   m_Layer: 0
   m_Name: '[FlyService]'
   m_TagString: Untagged
@@ -1551,82 +1628,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1573945732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573945731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d156682682256243b1a714c0e57d02f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flugun:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Flugun
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 7a295114-3d84-455d-9c11-e2408da98080
-      m_Processors: 
-      m_Interactions: Hold(duration=2)
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 077a814c-a21f-4744-acbc-78d7df6ae936
-        m_Path: <Touchscreen>/primaryTouch/press
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Flugun
-        m_Flags: 0
-      - m_Name: 
-        m_Id: a03da508-43c7-4558-ba3c-55af0f0acf3f
-        m_Path: <Mouse>/leftButton
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Flugun
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  UnityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1786899209}
-        m_TargetAssemblyTypeName: Flight, Assembly-CSharp
-        m_MethodName: FlyGunind
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  UnityEventIsPush:
-    m_PersistentCalls:
-      m_Calls: []
-  maxTime: 2
-  point: 0
-  UnityEventAngle:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1786899209}
-        m_TargetAssemblyTypeName: Flight, Assembly-CSharp
-        m_MethodName: ChangeAngle
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  currentAngle: 0
 --- !u!4 &1573945733
 Transform:
   m_ObjectHideFlags: 0
@@ -1635,12 +1636,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573945731}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -540, y: -1080, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1445330765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623112464
 GameObject:
@@ -2098,7 +2099,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1573945732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FlyGunService, Assembly-CSharp
         m_MethodName: ChangeAngle
         m_Mode: 0
@@ -2118,7 +2119,6 @@ SceneRoots:
   - {fileID: 1786899214}
   - {fileID: 1445330765}
   - {fileID: 402527065}
-  - {fileID: 1573945733}
   - {fileID: 1900806269}
   - {fileID: 735170164}
   - {fileID: 506404537}
